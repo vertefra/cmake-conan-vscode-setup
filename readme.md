@@ -33,7 +33,7 @@ This will create all the configuration files in a `build/` folder.
 Setup a Python virtual environment and install `conan`
 
 ```
-python -m .venv venv
+python -m venv .venv
 source .venv/bin/activate
 pip install conan
 ```
