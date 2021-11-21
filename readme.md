@@ -16,7 +16,7 @@ On VsCode:
 - Cmake extension
 - Cmake-tools extension
 
-## How does this works?
+## How does this work?
 
 The idea is that, VSCode, through `Cmake-tools`, will read the configuration from `CMakeLists.txt` and will build the executables.
 

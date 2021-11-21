@@ -3,7 +3,5 @@
 
 int main()
 {
-    Engine engine;
-    engine.check();
     return 0;
 } 
