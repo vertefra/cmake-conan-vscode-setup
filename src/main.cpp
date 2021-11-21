@@ -1,10 +1,9 @@
 #include<iostream>
-#include<SFML/Graphics.hpp>
-#include"Fake.hpp"
+#include"Engine.hpp"
 
 int main()
 {
-    Fake f;
-    f.doSomething();
+    Engine engine;
+    engine.check();
     return 0;
 } 

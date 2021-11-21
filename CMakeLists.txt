@@ -1,25 +1,23 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(Pong VERSION 0.1.0)
+project(CMakeTemplate VERSION 0.0.1)
 
-# ====== Project settings ======
+add_definitions("-std=c++17")
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-add_executable(Pong ./src/main.cpp)
-
-# ====== Project libraries ======
-
-target_include_directories(Pong PRIVATE ./include)
-add_library(Fake STATIC ./lib/Fake.cpp)
-target_link_libraries(Pong ${CONAN_LIBS} Fake)
-
-# ====== Conan libraries ========
-
-include(./vendors/conanbuildinfo.cmake)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
+
+# Project executables
+set(project_sources
+    src/main.cpp
+    src/lib/Engine.cpp
+)
+
+# class headers
+include_directories(src/include)
+
+# Adding executable and conan classes to linker
+add_executable(main ${project_sources})
+target_link_libraries(main ${CONAN_LIBS})
 
 
 
